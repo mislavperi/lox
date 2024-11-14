@@ -100,15 +100,15 @@ class Scanner {
 				addToken(STAR);
 				break;
 			case '!':
-				addToken(match("=") ? BANG_EQUAL : BANG);
+				addToken(match('=') ? BANG_EQUAL : BANG);
 				break;
 			case '=':
-				addToken(match("=") ? EQUAL_EQUAL : EQUAL);
+				addToken(match('=') ? EQUAL_EQUAL : EQUAL);
 			case '<':
-				addToken(match("=") ? LESS_EQUAL : LESS);
+				addToken(match('=') ? LESS_EQUAL : LESS);
 				break;
 			case '>':
-				addToken(match("=") ? GREATER_EQUAL : GREATER);
+				addToken(match('=') ? GREATER_EQUAL : GREATER);
 				break;
 			case '/':
 				if (match('/')) {
@@ -199,19 +199,19 @@ class Scanner {
 		return source.charAt(current);
 	}
 
-	private chat peekNext() {
+	private char peekNext() {
 		if (current + 1 >= source.length())
 			return '\0';
-		return source.chatAt(current + 1);
+		return source.charAt(current + 1);
 	}
 
-	private boolean isAlphta(char c) {
+	private boolean isAlpha(char c) {
 		return (c >= 'a' && c <= 'z') ||
 				(c >= 'A' && c <= 'Z') ||
 				c == '_';
 	}
 
-	private boolean isAlphtaNumeric(char c) {
+	private boolean isAlphaNumeric(char c) {
 		return isAlpha(c) || isDigit(c);
 	}
 
